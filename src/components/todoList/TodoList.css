@@ -1,0 +1,24 @@
+#todo {
+    border: 2px solid white;
+    border-radius: 14px;
+    padding: 20px;
+}
+li {
+    display: flex;
+    justify-content: space-evenly;
+    width: 35em;
+    margin-bottom: 10px;
+}
+
+
+span {
+   width: 90px;
+}
+
+#upperBtn {
+    margin-right: 10px;
+}
+
+#addBtn {
+    margin-top: 10px;
+}
