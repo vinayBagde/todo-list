@@ -1,24 +1,31 @@
 #todo {
-    border: 2px solid white;
-    border-radius: 14px;
-    padding: 20px;
+  border-radius: 14px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255, 0.2);
 }
 li {
-    display: flex;
-    justify-content: space-evenly;
-    width: 35em;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 35em;
+  margin-bottom: 10px;
 }
 
-
 span {
-   width: 90px;
+  width: 90px;
 }
 
 #upperBtn {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 #addBtn {
-    margin-top: 10px;
+  margin-top: 10px;
+}
+
+#inp {
+  width: 350px;
+  text-align: center;
+  height: 25px;
+  border-radius: 14px;
+  border: 2px solid white;
 }

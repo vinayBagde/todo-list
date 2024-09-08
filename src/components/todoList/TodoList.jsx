@@ -78,6 +78,7 @@ export default function TodoList() {
           placeholder="add a task"
           value={newTodo}
           onChange={updateTodoValue}
+          id="inp"
         />
         <br />
         <button onClick={addNewTask} id="addBtn">
