@@ -81,7 +81,7 @@ export default function TodoList() {
           id="inp"
         />
         <br />
-        <button onClick={addNewTask} id="addBtn">
+        <button onClick={addNewTask} id="addBtn" class="btn">
           Add Task
         </button>
         <br />
@@ -92,26 +92,33 @@ export default function TodoList() {
           {todos.map((todo) => (
             <li key={todo.id}>
               <span
+                id="task"
                 style={todo.isDone ? { textDecoration: " line-through" } : {}}
               >
                 {todo.task}
               </span>
 
-              <button onClick={() => deleteTodo(todo.id)}>delete</button>
+              <button onClick={() => deleteTodo(todo.id)} class="btn">
+                delete
+              </button>
 
-              <button onClick={() => upperCaseOne(todo.id)}>
+              <button onClick={() => upperCaseOne(todo.id)} class="btn">
                 UpperCase One
               </button>
-              <button onClick={() => markAsOne(todo.id)}>Mark As Done</button>
+              <button onClick={() => markAsOne(todo.id)} class="btn">
+                Mark As Done
+              </button>
             </li>
           ))}
         </ul>
         <br />
         <br /> <br />
-        <button onClick={upperCaseAll} id="upperBtn">
+        <button onClick={upperCaseAll} id="upperBtn" class="btn">
           upperCase All
         </button>
-        <button onClick={markAsAll}>Mark All As Done</button>
+        <button onClick={markAsAll} class="btn">
+          Mark All As Done
+        </button>
       </div>
     </>
   );
