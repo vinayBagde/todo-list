@@ -87,7 +87,7 @@ export default function TodoList() {
         <br />
         <br />
         <br /> <hr />
-        <h4>Tasks Todo</h4>
+        <h4>Todo Tasks</h4>
         <ul>
           {todos.map((todo) => (
             <li key={todo.id}>
