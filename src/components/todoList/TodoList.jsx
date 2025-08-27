@@ -10,7 +10,11 @@ export default function TodoList() {
 
   let addNewTask = () => {
     setTodos((previousTodos) => {
-      return [...previousTodos, { task: newTodo, id: uuidv4(), isDone: false }];
+      if(newTodo == "") {
+        return [...previousTodo];
+      } else {
+         return [...previousTodos, { task: newTodo, id: uuidv4(), isDone: false }];
+      }
     });
     setNewTodo("");
   };
