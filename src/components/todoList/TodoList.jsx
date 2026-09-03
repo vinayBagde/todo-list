@@ -83,6 +83,12 @@ export default function TodoList() {
       }),
     );
   };
+
+  let deleteAllTask = () => {
+    setTodos(() => {
+      return [];
+    });
+  };
   return (
     <>
       <div id="todo">
@@ -126,6 +132,7 @@ export default function TodoList() {
         </ul>
         <br />
         <br /> <br />
+        <button onClick={deleteAllTask} className="btn">deleteAllTask</button>
         <button onClick={upperCaseAll} id="upperBtn" className="btn">
           upperCase All
         </button>

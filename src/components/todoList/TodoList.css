@@ -18,6 +18,9 @@ span {
   font-weight: 700;
   font-size: 20px;
 }
+.btn {
+  margin-right: 10px;
+}
 
 #upperBtn {
   margin-right: 10px;
@@ -34,7 +37,6 @@ span {
   border-radius: 14px;
   border: 2px solid white;
 }
-
 
 .btn {
   background: rgba(68, 68, 221, 0.4);
