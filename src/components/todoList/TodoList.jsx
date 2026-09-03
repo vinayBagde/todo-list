@@ -10,10 +10,13 @@ export default function TodoList() {
 
   let addNewTask = () => {
     setTodos((previousTodos) => {
-      if(newTodo == "") {
+      if (newTodo == "") {
         return [...previousTodos];
       } else {
-         return [...previousTodos, { task: newTodo, id: uuidv4(), isDone: false }];
+        return [
+          ...previousTodos,
+          { task: newTodo, id: uuidv4(), isDone: false },
+        ];
       }
     });
     setNewTodo("");
@@ -30,48 +33,54 @@ export default function TodoList() {
   };
 
   let upperCaseAll = () => {
-    setTodos((previousTodo) =>
-      previousTodo.map((todo) => {
-        return { ...todo, task: todo.task.toUpperCase() };
-      })
-    );
+    setTodos((previousTodo) => {
+      return previousTodo.map((todo) => {
+        if (todo.task == todo.task.toLowerCase()) {
+          return { ...todo, task: todo.task.toUpperCase() };
+        } else {
+          return { ...todo, task: todo.task.toLowerCase() };
+        }
+      });
+    });
   };
 
   let markAsAll = () => {
-    setTodos((previousTodo) =>
-      previousTodo.map((todo) => {
-        return { ...todo, isDone: true };
-      })
-    );
+    setTodos((previousTodo) => {
+      return previousTodo.map((todo) => {
+        if (todo.isDone == false) {
+          return { ...todo, isDone: true };
+        } else {
+          return { ...todo, isDone: false };
+        }
+      });
+    });
   };
 
   let upperCaseOne = (id) => {
     setTodos((previousTodo) =>
       previousTodo.map((todo) => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            task: todo.task.toUpperCase(),
-          };
+        if (todo.id == id && todo.task == todo.task.toLowerCase()) {
+          return { ...todo, task: todo.task.toUpperCase() };
+        } else if (todo.id == id && todo.task == todo.task.toUpperCase()) {
+          return { ...todo, task: todo.task.toLowerCase() };
         } else {
           return todo;
         }
-      })
+      }),
     );
   };
 
   let markAsOne = (id) => {
     setTodos((previousTodo) =>
       previousTodo.map((todo) => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            isDone: true,
-          };
+        if (todo.id == id && todo.isDone == false) {
+          return { ...todo, isDone: true };
+        } else if (todo.id == id && todo.isDone == true) {
+          return { ...todo, isDone: false };
         } else {
           return todo;
         }
-      })
+      }),
     );
   };
   return (
@@ -85,7 +94,7 @@ export default function TodoList() {
           id="inp"
         />
         <br />
-        <button onClick={addNewTask} id="addBtn" class="btn">
+        <button onClick={addNewTask} id="addBtn" className="btn">
           Add Task
         </button>
         <br />
@@ -102,14 +111,14 @@ export default function TodoList() {
                 {todo.task}
               </span>
 
-              <button onClick={() => deleteTodo(todo.id)} class="btn">
+              <button onClick={() => deleteTodo(todo.id)} className="btn">
                 delete
               </button>
 
-              <button onClick={() => upperCaseOne(todo.id)} class="btn">
+              <button onClick={() => upperCaseOne(todo.id)} className="btn">
                 UpperCase One
               </button>
-              <button onClick={() => markAsOne(todo.id)} class="btn">
+              <button onClick={() => markAsOne(todo.id)} className="btn">
                 Mark As Done
               </button>
             </li>
@@ -117,10 +126,10 @@ export default function TodoList() {
         </ul>
         <br />
         <br /> <br />
-        <button onClick={upperCaseAll} id="upperBtn" class="btn">
+        <button onClick={upperCaseAll} id="upperBtn" className="btn">
           upperCase All
         </button>
-        <button onClick={markAsAll} class="btn">
+        <button onClick={markAsAll} className="btn">
           Mark All As Done
         </button>
       </div>
